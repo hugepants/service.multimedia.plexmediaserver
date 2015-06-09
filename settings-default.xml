@@ -1,0 +1,4 @@
+<settings>
+    <setting id="PMS_STARTUP_DELAY" value="5" />
+    <setting id="PMS_MAX_STACK_SIZE" value="3000" />
+</settings>

@@ -1,0 +1,46 @@
+#!/bin/sh
+
+################################################################################
+#      This file is part of OpenELEC - http://www.openelec.tv
+#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#
+#  OpenELEC is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  OpenELEC is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with OpenELEC.  If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+. /etc/profile
+
+oe_setup_addon service.multimedia.plexmediaserver
+
+sleep "$PMS_STARTUP_DELAY"
+
+export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="$ADDON_HOME"
+export PLEX_MEDIA_SERVER_HOME="$ADDON_DIR/lib"
+export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS="6"
+export PLEX_MEDIA_SERVER_TMPDIR="/tmp"
+export LD_LIBRARY_PATH="$ADDON_DIR/lib"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export PLEX_MEDIA_SERVER_MAX_STACK_SIZE="$PMS_MAX_STACK_SIZE"
+
+ulimit -s $PLEX_MEDIA_SERVER_MAX_STACK_SIZE
+
+chmod a+x $ADDON_DIR/bin/*
+chmod a+x $ADDON_DIR/lib/Plex*
+chmod a+x $ADDON_DIR/lib/Resources/Plex*
+chmod a+x $ADDON_DIR/lib/Resources/rsync
+chmod a+x $ADDON_DIR/lib/Resources/Python/bin/python
+
+> $ADDON_LOG_FILE
+
+eval EVENT_NOEPOLL=1 exec "\"$ADDON_DIR\"/lib/Plex\ Media\ Server &>\"$ADDON_LOG_FILE\""

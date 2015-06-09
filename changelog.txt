@@ -1,0 +1,8 @@
+1.0.0
+- initial release of new addon based on escalade's original work
+- PMS version 0.9.12.3
+- now runs as a systemd service
+- configurable startup delay (default: 5s)
+- configurable stack size (default: 3000 kb)
+- updated icon
+- fixed python errors in service.log

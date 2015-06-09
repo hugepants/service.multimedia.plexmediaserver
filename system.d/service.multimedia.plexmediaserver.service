@@ -1,0 +1,15 @@
+[Unit]
+Description=Plex Media Server
+After=graphical.target
+
+[Service]
+Type=simple
+ExecStart=/bin/sh -c "exec sh /storage/.kodi/addons/service.multimedia.plexmediaserver/bin/pms.start"
+TimeoutStopSec=5
+Restart=always
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=kodi.target
