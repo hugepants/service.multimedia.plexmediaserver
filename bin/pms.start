@@ -43,4 +43,4 @@ chmod a+x $ADDON_DIR/lib/Resources/Python/bin/python
 
 > $ADDON_LOG_FILE
 
-eval EVENT_NOEPOLL=1 exec "\"$ADDON_DIR\"/lib/Plex\ Media\ Server &>\"$ADDON_LOG_FILE\""
+eval "\"$ADDON_DIR\"/lib/Plex\ Media\ Server &>\"$ADDON_LOG_FILE\""
