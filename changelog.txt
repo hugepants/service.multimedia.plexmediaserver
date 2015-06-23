@@ -1,3 +1,7 @@
+1.0.1
+- cleanup PMS launch command
+- update to PMS 0.9.12.4
+
 1.0.0
 - initial release of new addon based on escalade's original work
 - PMS version 0.9.12.3
