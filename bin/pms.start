@@ -22,6 +22,8 @@
 
 oe_setup_addon service.multimedia.plexmediaserver
 
+eval rm -f "\"$ADDON_HOME\"/Plex\ Media\ Server/plexmediaserver.pid"
+
 sleep "$PMS_STARTUP_DELAY"
 
 export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="$ADDON_HOME"

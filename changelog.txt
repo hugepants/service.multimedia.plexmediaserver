@@ -1,3 +1,6 @@
+1.0.3
+- at service startup delete plexmediaserver.pid which may remain after an unclean shutdown
+
 1.0.2
 - update to PMS 0.9.12.8
 
