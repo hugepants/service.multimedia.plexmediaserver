@@ -31,8 +31,6 @@ export PLEX_MEDIA_SERVER_HOME="$ADDON_DIR/lib"
 export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS="6"
 export PLEX_MEDIA_SERVER_TMPDIR="/tmp"
 export LD_LIBRARY_PATH="$ADDON_DIR/lib"
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
 export PLEX_MEDIA_SERVER_MAX_STACK_SIZE="$PMS_MAX_STACK_SIZE"
 
 ulimit -s $PLEX_MEDIA_SERVER_MAX_STACK_SIZE
@@ -40,8 +38,6 @@ ulimit -s $PLEX_MEDIA_SERVER_MAX_STACK_SIZE
 chmod a+x $ADDON_DIR/bin/*
 chmod a+x $ADDON_DIR/lib/Plex*
 chmod a+x $ADDON_DIR/lib/Resources/Plex*
-chmod a+x $ADDON_DIR/lib/Resources/rsync
-chmod a+x $ADDON_DIR/lib/Resources/Python/bin/python
 
 > $ADDON_LOG_FILE
 
