@@ -2,7 +2,7 @@
 <addon id="service.multimedia.plexmediaserver"
        name="Plex Media Server"
        version="1.1.1"
-       provider-name="escalade, hugepants">
+       provider-name="hugepants">
   <requires>
     <import addon="os.openelec.tv" version="5.0"/>
     <import addon="xbmc.python" version="2.14.0"/>
