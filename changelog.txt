@@ -1,3 +1,6 @@
+1.2.5
+- update to PMS 1.2.5.2966
+
 1.1.4
 - update to PMS 1.1.4.2757
 
